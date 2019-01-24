@@ -1,7 +1,8 @@
-package com.mroz.mateusz.moduleweatherapp
+package com.mroz.mateusz.moduleweatherapp.weather_view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mroz.mateusz.moduleweatherapp.R
 
 class MainActivity : AppCompatActivity() {
 
