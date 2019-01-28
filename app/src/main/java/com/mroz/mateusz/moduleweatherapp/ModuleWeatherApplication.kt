@@ -18,5 +18,7 @@ class ModuleWeatherApplication: Application() {
         } else {
             Timber.plant(ReleaseTree())
         }
+
+
     }
 }

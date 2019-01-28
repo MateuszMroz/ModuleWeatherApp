@@ -2,6 +2,7 @@ package com.mroz.mateusz.moduleweatherapp.dagger.module
 
 import android.app.Application
 import com.mroz.mateusz.moduleweatherapp.util.TIMEOUT
+import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -10,7 +11,7 @@ import timber.log.Timber
 import java.io.File
 import java.util.concurrent.TimeUnit
 
-
+@Module
 class OkHttpClientModule {
     @Provides
     fun okHttpClient(cache:Cache, httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
