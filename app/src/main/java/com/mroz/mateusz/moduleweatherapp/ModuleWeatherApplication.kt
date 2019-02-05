@@ -1,11 +1,19 @@
 package com.mroz.mateusz.moduleweatherapp
 
+import android.app.Activity
 import android.app.Application
+import com.mroz.mateusz.moduleweatherapp.dagger.AppInjector
 import com.mroz.mateusz.moduleweatherapp.util.ReleaseTree
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
 import timber.log.Timber
+import javax.inject.Inject
 
 
-class ModuleWeatherApplication: Application() {
+class ModuleWeatherApplication: Application(), HasActivityInjector {
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
     override fun onCreate() {
         super.onCreate()
@@ -19,6 +27,8 @@ class ModuleWeatherApplication: Application() {
             Timber.plant(ReleaseTree())
         }
 
-
+        AppInjector.init(this)
     }
+
+    override fun activityInjector() = dispatchingAndroidInjector
 }
