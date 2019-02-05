@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            app:startDestination="@id/splash_screen">
+
+    <activity
+        android:id="@+id/splash_screen"
+        android:name="com.mroz.mateusz.moduleweatherapp.weather_view.splash_screen.SplashActivity"
+        android:label="SplashScreen">
+
+
+
+    </activity>
+
+    <activity
+        android:id="@+id/main_page"
+        android:name="com.mroz.mateusz.moduleweatherapp.weather_view.MainActivity"
+        android:label="MainPage"/>
+
+
+</navigation>
