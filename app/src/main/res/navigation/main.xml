@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main.xml"
+            app:startDestination="@id/weatherMainPage">
 
-<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            app:startDestination="@id/splash_screen">
-
-    <activity
-        android:id="@+id/splash_screen"
-        android:name="com.mroz.mateusz.moduleweatherapp.weather_view.splash_screen.SplashActivity"
-        android:label="SplashScreen">
-
-
-
-    </activity>
-
-    <activity
-        android:id="@+id/main_page"
-        android:name="com.mroz.mateusz.moduleweatherapp.weather_view.MainActivity"
-        android:label="MainPage"/>
-
-
+    <fragment android:id="@+id/weatherMainPage"
+              android:name="com.mroz.mateusz.moduleweatherapp.weather_view.main_page.WeatherMainPage"
+              android:label="fragment_weather_main_page"
+              tools:layout="@layout/fragment_weather_main_page"/>
 </navigation>

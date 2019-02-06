@@ -12,8 +12,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".weather_view.splash_screen.SplashActivity"
-                  android:theme="@style/AppTheme.Launcher">
+        <activity
+                android:name=".weather_view.splash_screen.SplashActivity"
+                android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
