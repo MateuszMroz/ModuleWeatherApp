@@ -1,6 +1,21 @@
-package com.mroz.mateusz.moduleweatherapp.weather_view.model
+package com.mroz.mateusz.moduleweatherapp.weather_view.models
 
-data class DaileWeatherDetails(
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.ForeignKey
+
+@Entity(
+    tableName = "hourly_weather_id",
+    foreignKeys = [ForeignKey(
+        entity = DailyWeather::class,
+        parentColumns = ["daily_id"],
+        childColumns = ["daily_weather_id"],
+        onUpdate = ForeignKey.CASCADE,
+        onDelete = ForeignKey.CASCADE,
+        deferred = true
+    )]
+)
+data class DailyWeatherDetails(
     var apparentTemperatureHigh: Double,
     var apparentTemperatureHighTime: Int,
     var apparentTemperatureLow: Double,
@@ -40,4 +55,8 @@ data class DaileWeatherDetails(
     var windGust: Double,
     var windGustTime: Int,
     var windSpeed: Double
-)
+) {
+    @ColumnInfo(name = "daily_weather_id")
+    var dailyWeatherId: Long = 0
+}
+

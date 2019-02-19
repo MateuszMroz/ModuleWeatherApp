@@ -50,8 +50,4 @@ class OkHttpClientModule {
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         return httpLoggingInterceptor
     }
-
-    @Provides
-    fun authorizationInterceptor(): AuthorizationInterceptor = AuthorizationInterceptor()
-
 }

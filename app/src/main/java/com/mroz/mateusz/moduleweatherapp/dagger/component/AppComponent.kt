@@ -2,6 +2,7 @@ package com.mroz.mateusz.moduleweatherapp.dagger.component
 
 import android.app.Application
 import com.mroz.mateusz.moduleweatherapp.ModuleWeatherApplication
+import com.mroz.mateusz.moduleweatherapp.dagger.module.DbModule
 import com.mroz.mateusz.moduleweatherapp.dagger.module.MainActivityModule
 import com.mroz.mateusz.moduleweatherapp.dagger.module.WeatherRetrofitModule
 import dagger.BindsInstance
@@ -11,6 +12,7 @@ import dagger.android.AndroidInjectionModule
 @Component(modules = [
     AndroidInjectionModule::class,
     WeatherRetrofitModule::class,
+    DbModule::class,
     MainActivityModule::class])
 interface AppComponent {
 
