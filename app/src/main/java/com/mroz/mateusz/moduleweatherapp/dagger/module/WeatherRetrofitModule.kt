@@ -10,13 +10,15 @@ import dagger.Provides
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module(includes = [OkHttpClientModule::class])
 class WeatherRetrofitModule {
-
+    @Singleton
     @Provides
     fun weatherApi(retrofit: Retrofit) = retrofit.create(WeatherApi::class.java)
 
+    @Singleton
     @Provides
     fun retrofit(okHttpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
@@ -27,9 +29,12 @@ class WeatherRetrofitModule {
             .build()
     }
 
+    @Singleton
     @Provides
-    fun gson() = GsonBuilder().create()
+    fun gson() = GsonBuilder()
+        .create()
 
+    @Singleton
     @Provides
     fun gsonConvertFactory(gson: Gson) = GsonConverterFactory.create(gson)
 }

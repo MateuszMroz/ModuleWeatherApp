@@ -1,6 +1,8 @@
 package com.mroz.mateusz.moduleweatherapp.api
 
 import androidx.lifecycle.LiveData
+import com.mroz.mateusz.moduleweatherapp.weather_view.models.entity.WeatherForecast
+import com.mroz.mateusz.moduleweatherapp.weather_view.models.pojo.WeatherForecastPojo
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -10,5 +12,5 @@ interface WeatherApi {
     fun getWeather(
         @Path("latitude")latitude:Double,
         @Path("longitude")longitude:Double
-    ): LiveData<ApiResponse<Unit/*temp*/>>
+    ): LiveData<ApiResponse<WeatherForecast>>
 }

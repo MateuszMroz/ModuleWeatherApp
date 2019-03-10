@@ -14,14 +14,15 @@ import okhttp3.logging.HttpLoggingInterceptor
 import timber.log.Timber
 import java.io.File
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
 @Module
 class OkHttpClientModule {
+    @Singleton
     @Provides
     fun okHttpClient(
         cache:Cache,
-        httpLoggingInterceptor: HttpLoggingInterceptor,
-        authorizationInterceptor: AuthorizationInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient()
             .newBuilder()
@@ -30,13 +31,14 @@ class OkHttpClientModule {
             .writeTimeout(TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(TIMEOUT, TimeUnit.SECONDS)
             .addInterceptor(httpLoggingInterceptor)
-            .addNetworkInterceptor(authorizationInterceptor)
             .build()
     }
 
+    @Singleton
     @Provides
     fun cache(file:File): Cache = Cache(file, 10 * 1024 *1024)
 
+    @Singleton
     @Provides
     fun file(app: Application): File {
         val file = File(app.cacheDir, "HttpCache")
@@ -44,6 +46,7 @@ class OkHttpClientModule {
         return file
     }
 
+    @Singleton
     @Provides
     fun httpLoggingInterceptor(): HttpLoggingInterceptor {
         var httpLoggingInterceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message -> Timber.d(message) })

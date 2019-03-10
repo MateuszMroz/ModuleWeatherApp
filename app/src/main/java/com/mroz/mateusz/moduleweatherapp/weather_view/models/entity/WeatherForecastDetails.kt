@@ -1,14 +1,12 @@
-package com.mroz.mateusz.moduleweatherapp.weather_view.models
+package com.mroz.mateusz.moduleweatherapp.weather_view.models.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+
 @Entity(tableName = "weather_forecast_details")
 data class WeatherForecastDetails(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "weather_forecast_details")
-    var id: Long,
     @ColumnInfo(name = "apparent_temperature")
     var apparentTemperature: Double,
     @ColumnInfo(name = "cloud_cover")

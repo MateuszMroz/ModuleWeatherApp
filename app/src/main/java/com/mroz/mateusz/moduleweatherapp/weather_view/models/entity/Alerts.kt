@@ -1,12 +1,10 @@
-package com.mroz.mateusz.moduleweatherapp.weather_view.models
+package com.mroz.mateusz.moduleweatherapp.weather_view.models.entity
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import androidx.room.*
 
 @Entity(
-    tableName = "user",
+    tableName = "alerts",
+    indices = [Index("weather_forecast_id")],
     foreignKeys = [ForeignKey(
         entity = WeatherForecast::class,
         parentColumns = ["weather_id"],
@@ -19,14 +17,14 @@ import androidx.room.PrimaryKey
 data class Alerts(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "alert_id")
-    var id:Long,
-    var description: String,
-    var expires: Int,
-    var time: Int,
-    var title: String,
-    var uri: String
+    var id:Long = 0,
+    var description: String? = null,
+    var expires: Int = 0,
+    var time: Int = 0,
+    var title: String? = null,
+    var uri: String? = null
 ) {
     @ColumnInfo(name = "weather_forecast_id")
-    var weatherForecastId:Long = 0
+    var weatherForecastId:Long = 0L
 }
 

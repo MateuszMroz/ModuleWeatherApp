@@ -20,23 +20,30 @@ object AppInjector {
             .application(moduleWeatherApplication)
             .build()
             .inject(moduleWeatherApplication)
+        moduleWeatherApplication.registerActivityLifecycleCallbacks(object: Application.ActivityLifecycleCallbacks{
+            override fun onActivityPaused(activity: Activity?) {
+            }
 
-        moduleWeatherApplication.registerActivityLifecycleCallbacks(object: Application.ActivityLifecycleCallbacks {
-            override fun onActivityPaused(p0: Activity?) {
+            override fun onActivityResumed(activity: Activity?) {
 
             }
 
-            override fun onActivityResumed(p0: Activity?) {}
+            override fun onActivityStarted(activity: Activity?) {
+            }
 
-            override fun onActivityStarted(p0: Activity?) {}
+            override fun onActivityDestroyed(activity: Activity?) {
+            }
 
-            override fun onActivityDestroyed(p0: Activity?) {}
+            override fun onActivitySaveInstanceState(activity: Activity?, outState: Bundle?) {
+            }
 
-            override fun onActivitySaveInstanceState(p0: Activity?, p1: Bundle?) {}
+            override fun onActivityStopped(activity: Activity?) {
+            }
 
-            override fun onActivityStopped(p0: Activity?) {}
+            override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
+                handleActivity(activity!!)
+            }
 
-            override fun onActivityCreated(p0: Activity?, p1: Bundle?) {}
         })
     }
 
