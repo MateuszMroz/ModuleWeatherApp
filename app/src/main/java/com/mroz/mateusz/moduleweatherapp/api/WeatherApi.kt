@@ -2,7 +2,6 @@ package com.mroz.mateusz.moduleweatherapp.api
 
 import androidx.lifecycle.LiveData
 import com.mroz.mateusz.moduleweatherapp.weather_view.models.entity.WeatherForecast
-import com.mroz.mateusz.moduleweatherapp.weather_view.models.pojo.WeatherForecastPojo
 import retrofit2.http.GET
 import retrofit2.http.Path
 

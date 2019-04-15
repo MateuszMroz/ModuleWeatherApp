@@ -10,12 +10,11 @@ import androidx.room.*
         parentColumns = ["hourly_id"],
         childColumns = ["hourly_weather_id"],
         onUpdate = ForeignKey.CASCADE,
-        onDelete = ForeignKey.CASCADE,
-        deferred = true
+        onDelete = ForeignKey.CASCADE
     )]
 )
 data class HourlyWeatherDetails(
-    @ColumnInfo(name = "hourly_weather_details_id")
+    @ColumnInfo(name = "hourly_details_id")
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0L,
     @ColumnInfo(name = "apparent_temperature")
@@ -25,16 +24,16 @@ data class HourlyWeatherDetails(
     @ColumnInfo(name = "dew_point")
     var dewPoint: Double = .0,
     var humidity: Double = .0,
-    var icon: String? = null,
+    var icon: String = "",
     var ozone: Double = .0,
     @ColumnInfo(name = "precip_intensity")
     var precipIntensity: Double = .0,
     @ColumnInfo(name = "precip_probability")
     var precipProbability: Double = .0,
     @ColumnInfo(name = "precip_type")
-    var precipType: String? = null,
+    var precipType: String = "",
     var pressure: Double = .0,
-    var summary: String? = null,
+    var summary: String = "",
     var temperature: Double = .0,
     var time: Int = 0,
     @ColumnInfo(name = "uv_index")

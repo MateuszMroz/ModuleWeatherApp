@@ -15,7 +15,7 @@ import androidx.room.*
     )]
 )
 data class DailyWeatherDetails(
-    @ColumnInfo(name = "daily_weather_details_id")
+    @ColumnInfo(name = "daily_details_id")
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0L,
     @ColumnInfo(name = "apparent_temperature_high")
@@ -39,7 +39,7 @@ data class DailyWeatherDetails(
     @ColumnInfo(name = "dew_point")
     var dewPoint: Double = .0,
     var humidity: Double = .0,
-    var icon: String? = null,
+    var icon: String = "",
     @ColumnInfo(name = "moon_phase")
     var moonPhase: Double = .0,
     var ozone: Double = .0,
@@ -52,9 +52,9 @@ data class DailyWeatherDetails(
     @ColumnInfo(name = "precip_probability")
     var precipProbability: Double = .0,
     @ColumnInfo(name = "precip_type")
-    var precipType: String? = null,
+    var precipType: String = "",
     var pressure: Double = .0,
-    var summary: String? = null,
+    var summary: String = "",
     @ColumnInfo(name = "sunrise_time")
     var sunriseTime: Int = 0,
     @ColumnInfo(name = "sunset_time")

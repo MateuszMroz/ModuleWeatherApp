@@ -18,7 +18,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
         val dbSource = loadFromDb()
         result.addSource(dbSource) { data ->
             result.removeSource(dbSource)
-            if(shouldFetch(data)) {
+            if(/*shouldFetch(data)*/true) {
                 fetchFromNetwork(dbSource)
             } else {
                 result.addSource(dbSource) { oldData ->

@@ -11,7 +11,7 @@ import com.mroz.mateusz.moduleweatherapp.weather_view.models.entity.*
         HourlyWeather::class,
         HourlyWeatherDetails::class,
         WeatherForecast::class],
-    version = 3,
+    version = 16,
     exportSchema = false
 )
 abstract class WeatherDb: RoomDatabase() {

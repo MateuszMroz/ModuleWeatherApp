@@ -53,10 +53,10 @@ class WeatherMainPage : Fragment(), Injectable {
 
 
     private fun connectToServer() {
-        val coordinates = WeatherMainPageViewModel.Coordinates(50.090269, 19.962549)
+        val coordinates = WeatherMainPageViewModel.Coordinates(50.090221, 19.962551)
         weatherViewModel.setLocation(coordinates)
         weatherViewModel.weather.observe(this, Observer {
-            Timber.i("value " + it.data?.latitude)
+            Timber.i("value " + it.data)
         })
     }
 }

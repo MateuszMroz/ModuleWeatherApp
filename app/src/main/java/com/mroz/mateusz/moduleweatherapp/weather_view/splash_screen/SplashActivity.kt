@@ -3,6 +3,7 @@ package com.mroz.mateusz.moduleweatherapp.weather_view.splash_screen
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.mroz.mateusz.moduleweatherapp.R
 import com.mroz.mateusz.moduleweatherapp.weather_view.MainActivity
 
